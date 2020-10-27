@@ -1,5 +1,7 @@
 describe "YAML files" do
   it "should be programatically generated" do
+    puts "psych version: #{Psych::VERSION}"
+    puts "libyaml version: #{Psych.libyaml_version}"
     yaml_files = ManageIQ::Content::Engine.root.join("content/**/*.yaml")
     invalid_files = Dir.glob(yaml_files).sort.select do |f|
       content = File.read(f)
